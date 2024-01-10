@@ -1,11 +1,12 @@
 const Icon = ({
     children,
     outlined=false,
-    className=""
+    className="",
+    ...rest
 }) =>{
     const design = (
         <>
-            <span className={outlined ? `${className} material-icons-outlined` : `${className} material-icons`}>
+            <span {...rest} className={outlined ? `${className} material-icons-outlined` : `${className} material-icons`}>
                 {children}
                 </span>
         </>

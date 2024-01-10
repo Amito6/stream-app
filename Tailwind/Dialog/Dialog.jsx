@@ -1,13 +1,24 @@
 import SweetAlert from "react-bootstrap-sweetalert";
+import { useSelector, useDispatch } from "react-redux";
+import { Icon } from "..";
 
-const Dialog = () => {
+const Dialog = ({title="",children}) => {
+    const dispatch = useDispatch();
+    const DialogReducer = useSelector(response=>response.DialogReducer)
     const design = (
         <>
             <SweetAlert 
-            title="Demo" 
-            show={false} 
+            title={title} 
+            show={DialogReducer.open} 
             showConfirm={false}
-            ></SweetAlert>
+            onConfirm={()=>{}}
+            style={{color:"black"}}
+            >
+                <Icon className="absolute top-3 right-3" 
+                style={{cursor:"pointer"}} 
+                onClick={()=>({type : "CLOSE_DIALOG"})}>close</Icon>
+                {children}
+            </SweetAlert>
         </>
     );
     return design;

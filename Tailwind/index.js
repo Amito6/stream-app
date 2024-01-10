@@ -7,7 +7,7 @@ import Icon from "./Icon/Icon";
 import { PatternOne,PatternTwo } from "./Patterns/patterns";
 import IconButton from "./Icon-Button/Icon-Button";
 import FormDesign from "./Form/From";
-import { Input } from "./Form/Field";
+import { Input,Select,UploadInput } from "./Form/Field";
 import { Carousel,Slider } from "./Animation/Animation";
 import Dialog from "./Dialog/Dialog";
 export { 
@@ -25,7 +25,9 @@ export {
     IconButton,
     FormDesign,
     Input,
+    Select,
     Carousel,
     Slider,
-    Dialog
+    Dialog,
+    UploadInput
 }

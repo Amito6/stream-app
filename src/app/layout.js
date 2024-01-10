@@ -2,8 +2,11 @@ import { Inter } from 'next/font/google'
 import './globals.css';
 import 'animate.css';
 import 'material-icons/iconfont/material-icons.css';
+import "font-awesome/css/font-awesome.min.css";
 import AuthProvider from '../../Components/AuthProvider/AuthProvider';
 const inter = Inter({ subsets: ['latin'] })
+import { Suspense } from 'react';
+import Loading from './loading';
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,9 +16,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body suppressHydrationWarning className={inter.className}>
        <AuthProvider>
-        {children}
+        <Suspense fallback={<Loading />}>
+          {children}
+        </Suspense>
        </AuthProvider>
       </body>
     </html>
