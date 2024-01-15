@@ -3,8 +3,6 @@ import videoProcessing from "../module/video-proc.module";
 const media = new AWS.MediaConvert({
     region : "us-east-2",
     endpoint : "https://wa11sy9gb.mediaconvert.us-east-2.amazonaws.com",
-    accessKeyId : "AKIA3L6WDYPAIJDOLMOK",
-    secretAccessKey : "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"
 })
  
 export const fetch = async (request) =>{
